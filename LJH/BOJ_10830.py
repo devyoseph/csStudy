@@ -29,7 +29,6 @@ def mult(lst1, lst2):
     return new_lst
 
 
-
 def square(lst, B):
     # global cnt
     # cnt += 1
