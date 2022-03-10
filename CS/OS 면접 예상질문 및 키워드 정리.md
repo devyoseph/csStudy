@@ -192,9 +192,9 @@
 | deadlock                              | 06. 데드락             | 프로세스들이 서로가 가진 자원을 무한정 기다리는 상태         | mutual exclusion<br /> no preemption<br /> hold and wait<br /> circular wait |
 | 주소 바인딩                           | 07. 메모리 관리        | 물리적 주소에 논리적 주소를 매핑하는 과정                    | compile time binding<br /> load time binding<br /> run time binding<br /> MMU |
 | 메모리 관리                           | 07. 메모리 관리        |                                                              | Dynamic Loading<br /> Dynamic Linking<br /> Overlays<br /> Swapping |
-| Hole                                  | 07. 메모리 관리        |                                                              | 외부조각<br /> 내부조각                                      |
+| Hole                                  | 07. 메모리 관리        |   할당 되지 않은 남은 메모리 영역                     | 외부조각<br /> 내부조각                                      |
 | Noncotiguous allocation (불연속 할당) | 07. 메모리 관리        | 가상 메모리의 내용을 연속된 형태가 아닌 조각으로 나뉘어 load를 하는 방식 | Paging<br /> Segmentation<br /> table<br /> TLB              |
-| 페이지 교체 알고리즘                  | 08. 가상메모리         |                                                              | FIFO<br /> Optimal Replacement<br />LRU<br />  LFU<br /> Clock |
+| 페이지 교체 알고리즘                  | 08. 가상메모리         | 페이지 폴트가 났을때 페이지 캐시에서 제외할 페이지를 선정하는 알고리즘               | FIFO<br /> Optimal Replacement<br />LRU<br />  LFU<br /> Clock |
 | Thrashing                             | 08. 가상메모리         | 프로세스 수행시간 보다 페이지 교체시간이 많아질때 처리속도가 떨어지는 상태 | PFF<br /> working set                                        |
 | File                                  | 09. 파일 시스템        | 관련있는 정보들을 이름을 가지고 모아둔것                     | File system<br /> metadata<br /> Mounting<br /> Directory<br /> Partition |
 | cache                                 | 09. 파일 시스템        |                                                              | Page Cache <br /> Buffer Cache                               |
