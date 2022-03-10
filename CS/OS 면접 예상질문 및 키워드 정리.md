@@ -164,21 +164,26 @@
 
 | 키워드              | 단원                           | 설명                                                 | 관련키워드                                       |
 | ------------------- | ------------------------------ | ---------------------------------------------------- | ------------------------------------------------ |
-| preemptive          | 04 CPU 스케줄링<br />07 데드락 | 프로세스 강제종료<br />프로세스의 자원을 강제로 반환 | SJF<br />No preemption(비선점)                   |
-| clock algorithm     | 08 메모리 관리                 | page replacement Algorithm                           | Page fault<br />LRU, LFU(heap)                   |
-| 내부조각과 외부조각 | 08 메모리 관리                 | 메모리 할당 시 생길 수 있는 조각                     | Contigouous Allocation<br />Paging, Segmentation |
-| Processor-Consumer  | 10 파일시스템                  | 동기화 문제 중 한가지                                | Buffer                                           |
-| RAID                | 11 입출력시스템                | 디스크 사용법 중 한가지                              | Parity                                           |
-| SCAN                | 11 입출력시스템                | 디스크 head의 탐색방법                               | FCFS<br />SSRF<br />C/N-SCAN<br />LOOK/C-LOOK    |
-| Page fault          | 08 메모리 관리                 | 페이지를 교체하는 방법                               | Interrupt<br />clock algorithm<br />swap         |
-| RR                  | 04 CPU 스케줄링                | CPU 스케줄링 방식 중 하나                            | Timer<br />LRU / LFU                             |
-| Seek time           | 11 입출력 시스템               | 디스크 접근 시간 중 대부분의 시간                    | SCAN<br />Rotational latency<br />Transfer time  |
-| suspend             | 프로세스                       | 프로세스의 상태                                      | blocked<br />swap<br />active                    |
-| critical section    | 병행 제어                      | 공유 데이터의 변수가 존재하는 곳                     | lock<br />semaphor<br />synchronization          |
-| Banker's Algorithm  | 데드락                         | 데드락의 파악 방법                                   | Safe                                             |
-| TLB                 | 메모리 관리                    | 페이지 기법에서 사용: 캐싱기법                       | Associative                                      |
-| MMU                 | 메모리 관리                    | 논리 주소에서 물리주소 변환                          | Limit/relocation register<br />Runtime binding   |
-| FAT                 | 파일시스템                     | Linked Allocation의 방식                             | Linked Allocation                                |
-| VFS                 | 파일 시스템                    | 동일한 시스템콜 인터페이스로 파일접근                | System call<br />NFS                             |
-| Paging              | 가상 메모리                    | 가상 메모리를 관리하는 방법                          | 내부조각<br />Multilevel<br />                   |
+| interupt                              | 2. 컴퓨터시스템의 구조 | OS에게 cpu를 양도하라는 일종의 신호, 주로 HW관점의 인터럽트를 의미 | trap<br /> 시스템 콜<br /> 모드비트<br /> Exception          |
+| ------------------------------------- | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| registers                             | 2. 컴퓨터시스템의 구조 | 프로세서가 접근할 수 있는 가장 가까운 영역의 기억장치        | program counter<br /> cahce<br /> buffers                    |
+| DMA                                   | 2. 컴퓨터시스템의 구조 | CPU이외의 HW가 CPU의 허가없이 디바이스 컨트롤러의 버퍼내용을 메모리에 block단위로 직접 전송하는 개념 |                                                              |
+| program                               | 03. 프로세스 관리      | 어떤 문제를 해결하기위한 명령어와 명령어의 순서, 자료들의 집합 | context switch<br /> process<br /> PCB                       |
+| Blocked 상태                          | 03. 프로세스 관리      | 모종의 이유로 CPU를 할당 받아도 당장 일을 시작 할 수 없는 상태(단 메모리상에 load된 상태)논리적, 물리적 실체에 대응되는 주소공간<br /> 실제 물리적 공간이 아님 | Suspended 상태                                               |
+| Scheduler                             | 03. 프로세스 관리      | OS에서 스케줄링을 담당하는 코드                              | job-job-scheduler<br /> CPU-scheduler<br /> swapper          |
+| Thread                                | 03. 프로세스 관리      | 프로세스의 CPU 수행 단위<br /> 주소공간에서 data, code는 공유 stack 각각의 thread의 정보를 저장<br /> PCB에선 PC와 레지스터를 제외한 부분은 공유 | code 영역<br /> data 영역<br /> stack 영역                   |
+| IPC                                   | 04. CPU 스케줄링       | Interprocess Communication 프로세스간 협력 메커니즘          | 독립 프로세스<br /> 협력 프로세스<br /> 메시지 패싱<br /> 메모리 공유<br /> Thread |
+| CPU 스케줄링 알고리즘                 | 04. CPU 스케줄링       |                                                              | FCFS<br /> SJF<br />SRTF<br /> Priority Scheduling<br /> RR<br />  Multilevel Queue <br /> Multilevel Feedback Queue |
+| Race Condition                        | 05. 병행제어           | 경쟁상태 저장공간을 공유하는 프로세서가 여럿 있는경우 프로세스의 저장공간 접근 타이밍이나 순서등이 결과값에 영향을 줄 수 있는 상태 | critical-section<br /> semaphores<br /> starvation<br /> Monitor |
+| 병행제어의 여러 문제들                | 05. 병행제어           |                                                              | producer-consumer problem<br /> readers-writers problem<br /> 식사하는 철학자 |
+| deadlock                              | 06. 데드락             | 프로세스들이 서로가 가진 자원을 무한정 기다리는 상태         | mutual exclusion<br /> no preemption<br /> hold and wait<br /> circular wait |
+| 주소 바인딩                           | 07. 메모리 관리        | 물리적 주소에 논리적 주소를 매핑하는 과정                    | compile time binding<br /> load time binding<br /> run time binding<br /> MMU |
+| 메모리 관리                           | 07. 메모리 관리        |                                                              | Dynamic Loading<br /> Dynamic Linking<br /> Overlays<br /> Swapping |
+| Hole                                  | 07. 메모리 관리        |                                                              | 외부조각<br /> 내부조각                                      |
+| Noncotiguous allocation (불연속 할당) | 07. 메모리 관리        | 가상 메모리의 내용을 연속된 형태가 아닌 조각으로 나뉘어 load를 하는 방식 | Paging<br /> Segmentation<br /> table<br /> TLB              |
+| 페이지 교체 알고리즘                  | 08. 가상메모리         |                                                              | FIFO<br /> Optimal Replacement<br />LRU<br />  LFU<br /> Clock |
+| Thrashing                             | 08. 가상메모리         | 프로세스 수행시간 보다 페이지 교체시간이 많아질때 처리속도가 떨어지는 상태 | PFF<br /> working set                                        |
+| File                                  | 09. 파일 시스템        | 관련있는 정보들을 이름을 가지고 모아둔것                     | File system<br /> metadata<br /> Mounting<br /> Directory<br /> Partition |
+| cache                                 | 09. 파일 시스템        |                                                              | Page Cache <br /> Buffer Cache                               |
+| 디스크 스케줄링                       |                        | 가장 오래걸리는 헤드의 이동시간 Seek time을 최소화 하기위한 목적 | FCFS<br /> SCAN <br /> Look                                  |
 
