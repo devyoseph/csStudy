@@ -29,7 +29,6 @@ lst = [list(map(int, input().split())) for _ in range(N)]
 queue = deque()
 dr = [-1, 0, 1, 0] # 상우하좌
 dc = [0, 1, 0, -1]
-check = False   # 반복 중단용
 cnt = 0
 queue.append([r,c,d])
 move()
