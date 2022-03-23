@@ -245,3 +245,72 @@ souce에서 destination으로 정보를 전달하는 두가지 방식
 
 
 
+---
+
+
+
+# 정리
+
+### network edge
+
+네트워크의 가장자리. 수많은 end system 이 존재한다.
+
+### Network core
+
+전체 네트워크 시스템의 중앙에 위치하여 데이터를 전송하는 핵심적인 역할을 함. 수많은 라우터들이 그물처럼 얽혀있는 구조.
+
+### Circuit switching
+
+* 회선 교환 방식
+  * 하나의 회선을 할당받아 데이터를 주고받는 방식
+  * 통신을 위한 연결이 필요하며, 연결이 되고나면 source 로 부터 destination 까지 도착하는데 사용되는 회선 전체를 독점하기 때문에 다른사람이 끼어들 수 없다.
+  * 전화와 같은 실시간 통신에 사용된다. 따라서 속도와 성능이 일정하다.
+
+### packet switching
+
+* 패킷 교환 방식
+  * 데이터를 패킷단위로 쪼개서 전송하는 방식
+  * Store and forward : 다음링크로 전송하기 전에 저장을 한뒤 전달하는 방식 사용
+  * 패킷의 헤더에 source 와 destination이 있음
+  * 라우팅 알고리즘을 이용하여 경로를 설정하고, 중간의 라우터들을 거쳐 최종 목적지에 도달하게 된다.
+  * 이러한 과정에서 패킷은 다음 라우터로 이동하기 위해 큐에서 대기(queueing) 하는데, 수용할 수 있는 큐의 범위를 초과하게 되면 손실(loss)이 발생한다.
+
+| Circuit Switching    | Packet Switching     |
+| -------------------- | -------------------- |
+| No store and forward | store and forward    |
+| dedicated            | shared               |
+| Bandwidth wastage    | No Bandwidth wastage |
+| Reserved             | Not Reserved         |
+| Less Delay           | Higher Delay         |
+| Telephone line       | Internet line        |
+| Highly Reliable      | Less Reliable        |
+| Call Setup           | No Call Setup        |
+
+### Queueing delay
+
+* 단위 시간동안 도착하는 패킷의 수가 output link의 capacity 를 넘어설 때 라우터의 queue에 패킷이 대기 상태로 쌓이게 되어, delay 가 발생하는 것
+* 만약 queue가 가득차서 더이상 패킷을 받을 공간이 없다면 패킷 loss 발생
+
+### Throughput
+
+* 네트워크상의 어떤 노드나 터미널로부터 또 다른 터미널로 전달되는 단위 시간당 데이터량
+
+### spoofing
+
+* 다른사람의 컴퓨터 시스템에 접근할 목적으로 IP주소를 변조한 후 합법적인 사용자인 것처럼 위장하여 시스템에 접근함으로써 나중에 IP주소에 대한 추적을 피하는 해킹 기법의 일종
+
+### sniffing
+
+* 네트워크 상에 지나다니는 패킷들을 캡처하여 그 안에 있는 내용을 들여다보는 기술
+
+### Best effort
+
+* 양단간 사용자에게 네트워크측에서 보장은 못하지만, 최선의 서비스 제공을 하려는 서비스 모델
+
+### Encapsulation & Decapsulation
+
+![image-20220323185615740](./1_Network_구성요소.assets/image-20220323185615740.png)
+
+### TCP 와 UDP의 차이
+
+![image-20220323185812206](./1_Network_구성요소.assets/image-20220323185812206.png)
