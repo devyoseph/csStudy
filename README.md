@@ -85,7 +85,7 @@ $ git commit -m "[BOJ] N-Queen / 골드5 / 1시간" -m "https://www.acmicpc.net/
 
 | 내용                        | 상세 내용                                                    | 알고리즘                                                     | 날짜                      | 체크 |
 | --------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------- | ---- |
-| 네트워크 스터디 준비        | [컴퓨터 네트워크(이화여자대학교 prof.이미정)](http://www.kocw.net/home/enrolment/enrolmentView.do?cid=e44bdd9b3a3f9bb5&lid=f28128416d2fb2cf)<br />스터디 방식 논의 및 보완 |                                                              | 2022년 3월 10일 ~ 12일    | ✅    |
+| 네트워크 스터디 준비        | `스터디 방식 논의 및 보완`<br />[컴퓨터 네트워크(이화여자대학교 prof.이미정)](http://www.kocw.net/home/enrolment/enrolmentView.do?cid=e44bdd9b3a3f9bb5&lid=f28128416d2fb2cf) |                                                              | 2022년 3월 10일 ~ 12일    | ✅    |
 | 코드 리뷰<br />CS 지식 공유 | `[Chapter 1-1: Roadmap]`<br />`[Chapter 1-2: Roadmap]`       | DFS/BFS<br />[백준 1260](https://www.acmicpc.net/problem/1260)<br />[백준 7576](https://www.acmicpc.net/problem/7576) | 2022년 3월 16일 오후 8:00 | ✅    |
 | 코드 리뷰<br />CS 지식 공유 | `[Chapter 1-3: Roadmap]`<br />`[Chapter 2-1: Application layer]` | 시뮬레이션<br />[백준 14502](https://www.acmicpc.net/problem/14502) | 2022년 3월 19일 오후 8:00 | ✅    |
 | 코드 리뷰<br />CS 지식 공유 | `[Chapter 2-2: Application layer]`<br />`[Chapter 2-3: Application layer]` | 시뮬레이션<br />[백준 14503](https://www.acmicpc.net/problem/14503) | 2022년 3월 23일 오후 8:00 | ✅    |
