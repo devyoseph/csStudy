@@ -15,7 +15,7 @@
 - 시간: 매주 수요일(오후 8시~10시), 토요일(오후 2시~4시)
 - 커리큘럼: CS과목: 운영체제,컴퓨터 네트워크, 컴퓨터 구조 (알고리즘 학습 병행)
   - 운영체제: http://www.kocw.net/home/cview.do?cid=4b9cd4c7178db077
-  - 네트워크: http://www.kocw.net/home/cview.do?cid=6b984f376cfb8f70
+  - 네트워크: http://www.kocw.net/home/enrolment/enrolmentView.do?cid=e44bdd9b3a3f9bb5&lid=f28128416d2fb2cf
 
 ​          
 
@@ -25,6 +25,7 @@
 - CS 내용 정리는 선발대 1명이 먼저 정리하고 서로 내용 취합
 - 모임 이후 각자 문제 1개씩 선정 후 배포
 - 모임 이전까지 배포된 문제 풀이(총 2문제)
+- 모임 직전 시간까지 PR 완료를 원칙으로 할 것
 - 내용 : 코드 리뷰 및 CS 지식공유/면접 대비
 
 ​            
@@ -80,4 +81,21 @@ $ git commit -m "[BOJ] N-Queen / 골드5 / 1시간" -m "https://www.acmicpc.net/
 
 ​                                      
 
-## ✅ 네트워크 (2022.03.16 ~ )
+## ✅ 네트워크 스터디 (2022.03.16 ~ )
+
+| 내용                        | 상세 내용                                                    | 알고리즘                                                     | 날짜                      | 체크 |
+| --------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------- | ---- |
+| 네트워크 스터디 준비        | [컴퓨터 네트워크(이화여자대학교 prof.이미정)](http://www.kocw.net/home/enrolment/enrolmentView.do?cid=e44bdd9b3a3f9bb5&lid=f28128416d2fb2cf)<br />스터디 방식 논의 및 보완 |                                                              | 2022년 3월 10일 ~ 12일    | ✅    |
+| 코드 리뷰<br />CS 지식 공유 | `[Chapter 1-1: Roadmap]`<br />`[Chapter 1-2: Roadmap]`       | DFS/BFS<br />[백준 1260](https://www.acmicpc.net/problem/1260)<br />[백준 7576](https://www.acmicpc.net/problem/7576) | 2022년 3월 16일 오후 8:00 | ✅    |
+| 코드 리뷰<br />CS 지식 공유 | `[Chapter 1-3: Roadmap]`<br />`[Chapter 2-1: Application layer]` | 시뮬레이션<br />[백준 14502](https://www.acmicpc.net/problem/14502) | 2022년 3월 19일 오후 8:00 | ✅    |
+| 코드 리뷰<br />CS 지식 공유 | `[Chapter 2-2: Application layer]`<br />`[Chapter 2-3: Application layer]` | 시뮬레이션<br />[백준 14503](https://www.acmicpc.net/problem/14503) | 2022년 3월 23일 오후 8:00 | ✅    |
+| 코드 리뷰<br />CS 지식 공유 | `[Chapter 2-4: Application layer]`<br />`[Chapter 2-5: Application layer]` | 시뮬레이션<br />[백준 14890](https://www.acmicpc.net/problem/14890) | 2022년 3월 26일 오후 8:00 | ✅    |
+| 코드 리뷰<br />CS 지식 공유 | `[Chapter 2: Application layerChapter 3: Transport layer]`<br />`[Chapter 3-1: Transport layer]` | 시뮬레이션<br />[백준 14891](https://www.acmicpc.net/problem/14891)<br />[백준 15685](https://www.acmicpc.net/problem/15685) | 2022년 3월 30일 오후 8:00 |      |
+|                             |                                                              |                                                              |                           |      |
+|                             |                                                              |                                                              |                           |      |
+|                             |                                                              |                                                              |                           |      |
+|                             |                                                              |                                                              |                           |      |
+|                             |                                                              |                                                              |                           |      |
+|                             |                                                              |                                                              |                           |      |
+|                             |                                                              |                                                              |                           |      |
+|                             |                                                              |                                                              |                           |      |
