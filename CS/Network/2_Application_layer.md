@@ -24,3 +24,27 @@
 * Round Trip Time
 
 * 작은 패킷이 클라이언트에서 서버로 갔다가, 서버에서 다시 클라이언트로 돌아오는데 걸린 시간
+
+### Cookies
+
+> 일종의 트랜잭션 히스토리
+
+### web caches(proxy server)
+
+
+### E-mail
+
+* SMTP: Simple Mail Transfer Protocol
+* POP3: Post Office Protocol
+* IMAP: Internet Message Access Protocol
+
+### DNS: domain name system
+
+* hierarchical
+* TLD
+* iterated query
+* recursive query
+
+### P2P: peer to peer
+
+* 
