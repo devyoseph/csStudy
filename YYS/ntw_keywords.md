@@ -389,33 +389,59 @@
 
    
 
-| 키워드             | 단원           | 설명                                                         | 관련 키워드                                                  |
-| ------------------ | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| packet delay       | 1. RoadMap     | **d**node = <br />**d**process + **d**queue + **d**trans + **d**prop | loss                                                         |
-| Packet loss        | 1. RoadMap     | packet 양이 queue 크기의 한계를 초과하면 packet이 소실된다   | delay                                                        |
-| Throughput         | 1. RoadMap     | packet은 하나씩 전달되지만 연속적으로 전송하기 때문에 단위 시간으로 묶는 경우 전송 속도를 나타낼 수 있습니다. |                                                              |
-| protocol           | 1. RoadMap     | protocol 은 layer system으로 구성되어 있다.                  |                                                              |
-| 5 계층             | 1. RoadMap     | application, transport, network, link, physical              |                                                              |
-| malware            | 1. RoadMap     | virus: executing시 활성화<br />warm: receiving시 자동 실행   |                                                              |
-| Dos                | 1. RoadMap     | Denial of Service의 약자<br />Host 주변을 malware을 통해 감염시킨뒤 botnet으로 만들어 garbage traffic을 계속 생성해 처리량을 넘는 traffic 발생 |                                                              |
-| sniffing           | 1. RoadMap     | Broadcasting(WIFI, shared ethernet) 환경에서 promiscuous(관리자) 모드로 전송되는 데이터를 조사 | NIC                                                          |
-| IP spoofing        | 1. RoadMap     | 자신의 IP 주소를 속여 데이터를 받는 방식                     |                                                              |
-| process            | 2. Application | host에서 실행되는 프로그램                                   | client-process<br />server process                           |
-| socket             | 2. Application | 계층 간 정보 이동은 socket을 통해 이루어진다.<br />TCP 통신에서 양쪽에 TCP connection socket이 생긴다 | TCP                                                          |
-| RTT                | 2. Application | Round Trip Time,<br />client 에서 출발한 패킷 하나가 server에 도달하고 다시 되돌아 오는 시간 | HTTP response time                                           |
-| HTTP response time | 2. Application | RTT가 TCP 연결 요청을 시도해서 request(요청)을 받기까지 걸리는 시간<br />2 RTT (TCP + File) + file Transmission | RTT                                                          |
-| GET                | 2. Application | URL method, HTTP request line에 있는 URL에서 `?`를 통해 값을 전달하는 방식 | POST<br />HEAD                                               |
-| POST               | 2. Application | HTTP Headlines 뒤에 entity body 부분에 저장해 내용을 전달하는 방식 | GET<br />HEAD                                                |
-| HEAD               | 2. Application | response를 받지 않아도 된다는 method로 file transmission이 발생하지 않는다. 주로 TEST 목적으로 사용 | GET<br />POST                                                |
-| PUT                | 2. Application | Server URL에 client가 파일을 업로드한다. 보통 서버를 관리하는 client 에 부여한다. | DELELTE                                                      |
-| DELETE             | 2. Application | Server URL에 있는 파일의 삭제를 요청한다.                    | PUT                                                          |
-| Cookie             | 2. Application | HTTP 통신에서 stateless한 연결방식을 보완하기 위해 client-server가 서로 유지하는 정보 |                                                              |
-| SMTP               | 2. Application | Simple mail transfer protocol                                | User Agent<br />Mail servers<br />Mail port 25<br />POP3<br />IMAP |
-| POP3               | 2. Application | Post Office Protocol,<br />Authorization 과 Transaction 의 순서대로 메일을 읽어오는 방식 | SMTP<br />IMAP                                               |
-| IMAP               | 2. Application | Internet Mail Access Protocol,<br />메일 서버에 모두 저장되고 사용자의 ID와 폴더이름을 매핑해서 불러오는 방식 | SMTP<br />POP3                                               |
-| DNS                | 2. Application | Domain Name system,<br />hostname 을 IP주소로 매핑하고 그 정보를 분산해서(distributed) 데이터베이스에 계층적으로 저장해 검색하는 시스템 |                                                              |
-| TLD                | 2. Application | Top-level domain servers,<br />authoritative servers 의 주소들을 저장하고 있다. | local DNS servers<br />root name servers는 13개              |
-| iterative query    | DNS            | 내가 주소를 요청한 서버가 다른 서버들에 요청해 다시 나에게 반환하는 방식 | recursive query                                              |
-| recursive query    | DNS            | 내가 직접 local서버부터 찾아서 host 주소를 알아내는 방식     | iterative query                                              |
-|                    |                |                                                              |                                                              |
-
+| 키워드                        | 단원           | 설명                                                         | 관련 키워드                                                  |
+| ----------------------------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| RTT                           | 1. RoadMap     |                                                              |                                                              |
+| packet delay                  | 1. RoadMap     | **d**node = <br />**d**process + **d**queue + **d**trans + **d**prop | loss                                                         |
+| Packet loss                   | 1. RoadMap     | packet 양이 queue 크기의 한계를 초과하면 packet이 소실된다   | delay                                                        |
+| Throughput                    | 1. RoadMap     | packet은 하나씩 전달되지만 연속적으로 전송하기 때문에 단위 시간으로 묶는 경우 전송 속도를 나타낼 수 있습니다. |                                                              |
+| protocol                      | 1. RoadMap     | protocol 은 layer system으로 구성되어 있다.                  |                                                              |
+| 5 계층                        | 1. RoadMap     | application, transport, network, link, physical              |                                                              |
+| malware                       | 1. RoadMap     | virus: executing시 활성화<br />warm: receiving시 자동 실행   |                                                              |
+| Dos                           | 1. RoadMap     | Denial of Service의 약자<br />Host 주변을 malware을 통해 감염시킨뒤 botnet으로 만들어 garbage traffic을 계속 생성해 처리량을 넘는 traffic 발생 |                                                              |
+| sniffing                      | 1. RoadMap     | Broadcasting(WIFI, shared ethernet) 환경에서 promiscuous(관리자) 모드로 전송되는 데이터를 조사 | NIC                                                          |
+| IP spoofing                   | 1. RoadMap     | 자신의 IP 주소를 속여 데이터를 받는 방식                     |                                                              |
+| process                       | 2. Application | host에서 실행되는 프로그램                                   | client-process<br />server process                           |
+| socket                        | 2. Application | 계층 간 정보 이동은 socket을 통해 이루어진다.<br />TCP 통신에서 양쪽에 TCP connection socket이 생긴다 | TCP                                                          |
+| RTT                           | 2. Application | Round Trip Time,<br />client 에서 출발한 패킷 하나가 server에 도달하고 다시 되돌아 오는 시간 | HTTP response time                                           |
+| HTTP response time            | 2. Application | RTT가 TCP 연결 요청을 시도해서 request(요청)을 받기까지 걸리는 시간<br />2 RTT (TCP + File) + file Transmission | RTT                                                          |
+| GET                           | 2. Application | URL method, HTTP request line에 있는 URL에서 `?`를 통해 값을 전달하는 방식 | POST<br />HEAD                                               |
+| POST                          | 2. Application | HTTP Headlines 뒤에 entity body 부분에 저장해 내용을 전달하는 방식 | GET<br />HEAD                                                |
+| HEAD                          | 2. Application | response를 받지 않아도 된다는 method로 file transmission이 발생하지 않는다. 주로 TEST 목적으로 사용 | GET<br />POST                                                |
+| PUT                           | 2. Application | Server URL에 client가 파일을 업로드한다. 보통 서버를 관리하는 client 에 부여한다. | DELELTE                                                      |
+| DELETE                        | 2. Application | Server URL에 있는 파일의 삭제를 요청한다.                    | PUT                                                          |
+| Cookie                        | 2. Application | HTTP 통신에서 stateless한 연결방식을 보완하기 위해 client-server가 서로 유지하는 정보 |                                                              |
+| SMTP                          | 2. Application | Simple mail transfer protocol                                | User Agent<br />Mail servers<br />Mail port 25<br />POP3<br />IMAP |
+| POP3                          | 2. Application | Post Office Protocol,<br />Authorization 과 Transaction 의 순서대로 메일을 읽어오는 방식<br />서버 입장에서 단방향으로 보내고 메시지를 삭제하거나 keep을 결정 | SMTP<br />IMAP                                               |
+| IMAP                          | 2. Application | Internet Mail Access Protocol,<br />메일 서버에 모두 저장되고 사용자의 ID와 폴더이름을 매핑해서 불러오는 방식<br />서버와 사용자간의 양방향 통신으로 매핑을 한다. | SMTP<br />POP3                                               |
+| DNS                           | 2. Application | Domain Name system,<br />hostname 을 IP주소로 매핑하고 그 정보를 분산해서(distributed) 데이터베이스에 계층적으로 저장해 검색하는 시스템 |                                                              |
+| TLD                           | 2. Application | Top-level domain servers,<br />authoritative servers 의 주소들을 저장하고 있다. | local DNS servers<br />root name servers는 13개              |
+| iterative query               | DNS            | 내가 주소를 요청한 서버가 다른 서버들에 요청해 다시 나에게 반환하는 방식 | recursive query                                              |
+| recursive query               | DNS            | 내가 직접 local서버부터 찾아서 host 주소를 알아내는 방식     | iterative query                                              |
+| UDP                           | 3. Transport   | User Datagram Protocol<br />Client & Server 사이에 연결(Connection)이 존재하지 않음<br />unreliable datagram<br />(=no handshaking) UDP segment 개별 전송(순서 고려X) | `.bind` & `listen`<br />IP address & port number<br />client port #  표기X |
+| TCP                           | 3. Transport   | Client & Server 별도의 socket을 열고 연결하는 방식<br />reliable, bytes stream-oriented, in-order, pipelined, full duplex data(client도 수신 가능) | `.bind` & `listen`<br />IP address & port #<br />고정헤더    |
+| network layer                 | 2. Application | logical communication between hosts                          |                                                              |
+| Transport layer               | 3. Transport   | Process to Process, logical communication between processes  | UDP<br />TCP                                                 |
+| Multiflexing                  | 3. Transport   | Transport layer 에서 핵심적인 system<br />process(application, sender)가 transport header를 붙이고 서버는 이 header를 이용해 source port와 dest port를 인식한다. | segment<br />demultiflexing                                  |
+| demultiflexing                | 3. Transport   | host(server) 가 segment의 destination port # 를 확인한다.<br />그 port에 해당하는 socket으로 전달한다. |                                                              |
+| (SNMP)                        | 3. Transport   | periodically 정보 교환                                       |                                                              |
+| UDP checksum                  | 3. Transport   | UDP 전송에서 segment의 header를 이용해 error를 찾아내는 방식<br />무결성 검사<br /> | IPv4 Pseudo Header                                           |
+| Sequence number               | 3. Transport   | Byte stream "number" of first byte in segment's data<br />segment에 실려있는 데이터 첫 부분의 number<br />ackowledgements: 난수인 ISN(Initial Sequence Number)가 결정되고 해당 번호부터 순서가 시작되어 Sequence Number(raw)가 된다.(해킹 방지) | TCP<br />ACK number                                          |
+| ACK number                    | 3. Transport   | ackowledgements:                                             | Cumulative ACK                                               |
+| duplicate ACKs                | 3. Transport   | TCP data 가 out of order 로 도착했을 때 보내는 ACK 번호      | TCP fast retransmit                                          |
+| negotiate                     | 3. Transport   | TCP가 data를 송신할 때 sequence number을 결정하는 것<br />Receiving Buffer의 길이(rwnd) 등을 고려해 데이터 흐름 제어 결정 | Flow Control                                                 |
+| Flow Control (흐름제어)       | 3. Transport   | 송신측과 수신측의 데이터 처리 속도 차이를 해결하기 위한 기법<br />Receiving Buffer에 쌓이는 데이터를 조절한다.<br />끊임없이 증가하고 감소하는 것을 반복한다. | stop and wait <br />sliding window<br />TCP                  |
+| Congestion Control (혼잡제어) | 3. Transport   | 송신측의 데이터 전달과 네트워크의 데이터 처리 속도 차이를 해결하기 위한 기법 | TCP                                                          |
+| TCP fast retransmit           | 3. Transport   | timeout이 발생하기 전에 duplicate ACKs 를 토대로 data를 재송신하는 방법 | triple duplicate ACKs                                        |
+| AIMD                          | 3. Transport   | Additive increase multiplicative decrease                    | TCP congestion control                                       |
+| rwnd / cwnd                   | 3. Transport   | rwnd: flow control<br />cwnd: congestion control (1 MSS, 1 maximun segment size) | ssthresh                                                     |
+| ssthresh                      | 3. Transport   | cwnd가 속도를 줄이는 default value 값<br />loss가 발생한 cwnd 값의 절반으로 재설정한다. | congestion avoidance                                         |
+| TCP RENO<br />TCP Tahoe       | 3. Transport   | timeout이나 3 duplicate  발생시 cwnd 를 줄이는 방식<br />TCP RENO: 절반으로 줄임<br />TCP Tahoe: 1로 초기화 | ssthresh                                                     |
+| window size                   |                | Loss 가 발생하는 window size                                 |                                                              |
+|                               |                |                                                              |                                                              |
+|                               |                |                                                              |                                                              |
+|                               |                |                                                              |                                                              |
+|                               |                |                                                              |                                                              |
+|                               |                |                                                              |                                                              |
+|                               |                |                                                              |                                                              |
+|                               |                |                                                              |                                                              |
