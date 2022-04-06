@@ -387,7 +387,371 @@
 
   
 
-   
+  ​     
+
+### Client/Server socket interaction: UDP
+
+#### - UPD
+
+> Client & Server 사이에 연결(Connection)이 존재하지 않음
+
+* client는 socket을 열고 server IP와 port를 지정해서 보낸다.
+* server가 socket을 통해 client 주소와 port 를 읽고 다시 재전송한다.
+* Header size가 작다 = UDP segment의 header 가 작다 = 오버헤드가 작다
+
+* 구현(Python)
+
+  <img src="ntw_keywords.assets/image-20220401161043495.png" alt="image-20220401161043495" style="zoom:50%;" />
+
+  * 서버는 while 1: 을 통해 계속 루프를 돌리면서 통신을 기다린다.
+
+#### - TCP
+
+* Server 역시 먼저 구동 중이어야 한다: socket 을 통해 client를 대기
+* Client: IP 주소와 port번호 특정
+* Server 는 이 client와 연결할 유일한 socket을 만든다.
+* 통신이 끝나면 서버는 연결을 위해 만들었던 socket을 close 한다.
+* <img src="ntw_keywords.assets/image-20220401170904074.png" alt="image-20220401170904074" style="zoom:50%;" />
+
+​           <img src="ntw_keywords.assets/image-20220401170917360.png" alt="image-20220401170917360" style="zoom:50%;" />
+
+### 2장 요약
+
+<img src="ntw_keywords.assets/image-20220401163221497.png" alt="image-20220401163221497" style="zoom:50%;" />
+
+​               
+
+## 3. Transport Layer
+
+> application 간의 logical process 를 제공한다.
+
+* Socket 통신: Multiplexing/demultiflexing
+
+  * 서버 안에 application이 여러개 존재
+    * multiflexing: application에서 transport layer로 내려보낼 때 transport header 추가
+    * demultiflexing: application에서 받을 때 이전에 기록한 transport header에 있는 주소를 읽고 socket으로 보낸다.
+
+
+  <img src="ntw_keywords.assets/image-20220401163839512.png" alt="image-20220401163839512" style="zoom:50%;" />
+
+  <img src="ntw_keywords.assets/image-20220401164416092.png" alt="image-20220401164416092" style="zoom:50%;" />
+
+* UDP checksum
+
+  > UDP 전송에서 segment의 header를 이용해 error를 찾아내는 방식
+  > sender는 UDP checksum 에 값을 집어넣고 받을 때 integer 값들을 더해서 검사
+
+* TCP Sequence number(통신 순서넘버) ACK NUMBER(잘 받았다는 확인)
+  * 둘 다 바이트 단위로 넘버링: 보내는 패킷의 넘버
+  * Flow control
+
+​      
+
+### TCP와 UDP의 공통점들, 차이점들
+
+* 공통점
+  * Transport Layer
+    * segment에 header와 tail이 존재
+    * Dest port,IP, Source Port, IP 필요
+* TCP의 고정헤더: 5개 (각 32bits = 4bytes = 4x5 = 20bytes)
+
+​           
+
+### TCP round trip time, timeout
+
+* 과거의 round trip time을 이용해 다음번의 round trip time을 구한다.
+* **timeout interval**
+* 순서:
+  * segment를 생성함과 동시에 checksum + seq # 를 생성 = 보낸다
+  * timer가 켜져있지 않았다면 timer를 킨다.(**내보낸지 제일 오래된 segment에 타이머를 붙인다.**)
+  * timeout 발생: 가장 오래된 segment가 ack 을 안보내는 경우에 발생
+  * Ack #  번호가 왔음 = 그 번호까지 잘 전송된 것 = 정보를 업데이트하고 segment가 모두 전송되었다면 새로운 timer를 다시 세팅해서 뒤 segment를 보내고 기다린다.
+
+​        
+
+### reliable data를 위한 TCP의 요소
+
+1. checksum
+2. ack #
+3. pipelining
+4. Sequence #
+5. Timer : single retransmission timer (하나의 타이머를 사용한다.)
+
+​        
+
+### TCP sender 정리
+
+* Next Sequence Number와 SendBase에 의존
+  * NextSeq #: 다음번 내보낼 segment의 시퀀스 번호 = 현재 NextSeqNum + length(data)
+  * SendBase: 다음번 Ack을 기다리고 있는 sequence 번호
+* Start Timer: 내보낸 segment 중 가장 오래된 segment
+* ACK received
+  * ACK이 좀 느리게 오면 데이터를 잘 받았더라도 timeout이 발생해서 데이터를 다시 보낸다.
+
+<img src="ntw_keywords.assets/image-20220402181941778.png" alt="image-20220402181941778" style="zoom:50%;" />
+
+​         
+
+### TCP receiver
+
+* sender가 보낸 data 신호가 Network 계층에서 TCP(Receiver)로 올라온다.
+
+* **ACK을 모두 다 보내고 초기화 상태일 때 segment를 받는다면 바로 socket을 열지 않고 일단 기다린다.**
+
+  * 왜냐하면 sender가 보낸 신호가 여러 개일 수 있기 때문에 cumulative 를 이용해 한꺼번에 보낼 수 있기 때문이다.(500ms)
+  * 기다리다 하나 더 들어오면 즉시 single cumulative ACK를 보낸다.
+
+  <img src="ntw_keywords.assets/image-20220402182603480.png" alt="image-20220402182603480" style="zoom:50%;" />
+
+  * 만약 더 오지 않으면 바로 ACK을 보낸다.
+  * 순서대로 오지않고 따로따로 왔다면(out of order) 빠진 부분을 받기 위해 **duplicate ACK**를 보낸다.
+
+​         
+
+### TCP fast retransmit
+
+> timeout이 발생하기 전에 duplicate ACKs 를 토대로 data를 재송신하는 방법
+
+* Time-out 시간은 상대적으로 길다(relatively long)
+* **duplicate ACK**를 통해 lost segments들을 파악한다.
+  * 누락된 data 이후에 ACK #는 모두 duplicate로 대체된다.
+    * 3번이상 duplicate ACK를 받으면 timeout이 발생하기 전에 재송신한다.
+
+<img src="ntw_keywords.assets/image-20220402183628959.png" alt="image-20220402183628959" style="zoom:50%;" />
+
+​         
+
+### TCP flow control
+
+<img src="ntw_keywords.assets/image-20220402183943286.png" alt="image-20220402183943286" style="zoom:50%;" />
+
+* TCP socket receiver buffers: application으로 바로 보내는 것이 아니라 buffer에 넣고 전송한다.
+  * 만약 아래에서 송신하는 data가 더 많으면 buffer가 찬다.
+  * 이런 일이 발생하지 않도록 **flow control**을 한다.
+* 남은 buffer의 공간(길이)를 rwnd로 나타내고 data를 내볼 때 이 rwnd 값을 같이 보낸다.
+
+​          
+
+### TCP 3-way hanshake
+
+> 먼저 **ESTAB** 되는 쪽이 Client인 이유: timeout 등으로 서버가 닫히면 Failure 발생하기 때문이다.
+
+* 2단계로 나누었을 때 발생하는 문제
+
+  * client가 연결 요청을 보낸다. (SYN msg = Synchronzing msg)
+  * 서버가 동의(SYN ACK)하고 동의한 내용을 client가 뒤늦게 확인한다 (서버는 이미 Established)
+    * 근데 client가 보내는 자료가 너무 늦으면 서버가 닫히고 이후 데이터에 대해서 서버는 다시 새로운 신호로 받아들여 라인이 새로 만들어진다. = 낭비
+
+  <img src="ntw_keywords.assets/image-20220402185435257.png" alt="image-20220402185435257" style="zoom:33%;" />
+
+* 3 단계
+
+  * client가 seq #을 보내고 server가 받는다.
+  * server가 동의하고 client에게 ACK # 를 보내면 client가 먼저 ESTABLISH 하고
+  * 다시 client는 server에게 ACK를 보내는데 이것을 받으면 서버가 ESTAB된다.
+
+<img src="ntw_keywords.assets/image-20220402190002935.png" alt="image-20220402190002935" style="zoom: 50%;" />          
+
+​        
+
+### TCP: closing connection
+
+<img src="ntw_keywords.assets/image-20220402190337764.png" alt="image-20220402190337764" style="zoom:50%;" />
+
+* Finally bit = 1 / seq = x 을 보내면 이에 대해 ACK #를 보내준다.
+* client 쪽에서 보내는 신호이다.
+* 서버는 이것을 받고 ACKbit = 1 와 ACKnum = x+1을 보내준다.
+* 다시 서버는 ACKbit = 1, ACKnum = y+1을 보낸다.
+  * 이를 받고 서버측에서 CLOSED 한다.
+  * 보낸 client는 바로 close하지 않고 2*max segment lifetime 만큼 기다린다.
+    * ACK가 server에 전달되지 않는 경우가 있는데 그러는 경우 server가 닫히지 않기 때문임
+
+​          
+
+### Congestion
+
+> 데이터가 지체되거나 소실될 수 있는 문제 발생
+
+* congestion이 발생하면 **retransmission** 가능성이 높아진다.
+  * 너무 느린 나머지 불필요한 retransmit이 발생가능
+  * 필수적인 일을 못하는 경우가 발생
+* 해결책 2가지
+
+​     <img src="ntw_keywords.assets/image-20220402190807918.png" alt="image-20220402190807918" style="zoom:50%;" />
+
+* approach: sender increase transmission rate
+* TCP의 sending rate(전송속도) 조절:
+  * rate = cwnd/RTT bytes.sec
+* cwnd 의 크기 조절: 1 MSS 로 시작해서 매 RTT마다 2배씩 늘린다
+  * 처음 연결에는 **Slow start**지만 2배씩 늘어나므로 금방 증가한다.
+  * Congestion Avoidance: 충분히 크다면 조심해야한다.
+    * ssthresh: cwnd가 속도를 줄이는 default value 값
+    * ssthresh를 도달한 이후에는 RTT마다 1개씩 증가시킨다. 
+
+​        
+
+### TCP: data detecting / loss 감지 요약
+
+* timeout: loss 발생시
+  * cwnd: 1로 초기화
+* TCP RENO:
+  * 3duplicate ACKs 발생시 현재 cwnd를 반으로 줄인다.
+* TCP Tahoe: timeout이나 3 duplicate ACKs 발생시: cwnd = 1로 초기화
+
+​        
+
+### TCP performance : throughput / Fairness
+
+* throughput: high speed level의 전송에서는 loss가 매우 적어져야한다.
+* Fairness: 거리가 비슷한 host로 부터 데이터들이 송신될 때 라우터에서 엇갈린다.
+  * 두 connection이 거리가 비슷한 경우 unfair하게 시작해도 TCP 구조상 속도 증감을 반복하며 결국 같아진다.
+
+​                 
+
+​           
+
+## network 계층
+
+> Transport 계층의 segment 를 sending host에서 receiving host로 전송
+>
+> 보내는 입장: segment을 datagram으로 encapsulate
+>
+> 받는 입장: segment를 transport layer로 전달
+>
+> router : IP datagrams의 header를 보고 어디로 보낼지 결정
+
+* 가장 큰 기능 2가지
+
+  * Routing: 목적지를 계산하는 것
+    * routing algorithm: end-end-path를 계산
+  * forward: router의 input 과 output이 있는데 input으로 들어가면 적절한 output으로 옮겨주는 역할
+    * forwarding table이 존재해서 header에 번호에 맞추어 outputlink가 저장되어있다.
+
+* 서비스 모델
+
+  * 각 데이터그램
+    * delivery 보장
+    * 40msec delay 안에서 delivery qㅗ장
+  * flow of 데이터그램
+
+* Connection / connection-less
+
+  > TCP/UDP: 프로세스 to 프로세스
+  >
+  > Datagram: 호스트 to 호스트
+
+  * datagram: connection-less
+
+  * Virtual-circuit: connection-oriented
+
+    * call setup, teardown: 데이터를 보내기 전에 매번 수행
+
+      * call setup: 다음 이동할 라우터에다 그 다음 callsetup 을 위한 VC 넘버를 새로 갱신
+
+      <img src="ntw_keywords.assets/image-20220405230220300.png" alt="image-20220405230220300" style="zoom:50%;" />
+
+    * VC 번호 할당, path, forwarding table에 저장
+
+      * 패킷은 VC number를 목적지 path가 아닌 VC number 를 가지고 찾아간다.
+      * 매 link마다 VC number가 바뀔 수 있다.
+        * 만약 같은 VC넘버를 사용하는 경우: 더 긴 VC번호가 필요하다. (전체에서 VC link별로 unique 해야하므로)
+
+* signalling protocols
+
+  * VC 의 매 통신마다 call setup을 하기 때문에 protocol 이 필요하다.
+
+    * 실 사용 예) ATM, frame-relay, X.25
+
+  * Datagram: call setup 이 전혀 없다
+
+    * Forwarding table만 사용한다.
+
+      * 4billions IP 주소가 필요하기 때문에 목적지를 묶은 범위로 점점 세부적으로 찾도록 구성한다.
+
+        <img src="ntw_keywords.assets/image-20220405232101257.png" alt="image-20220405232101257" style="zoom:50%;" />
+
+        ​       
+
+​            
+
+### Datagram 과 VC network 비교
+
+<img src="ntw_keywords.assets/image-20220405232235725.png" alt="image-20220405232235725" style="zoom:67%;" />
+
+* Datagram: smart end Systems: 개속적으로 발전한다.
+* ATM: dumb end systems
+
+​           
+
+### Router Architecture
+
+> Routing, forwarding 이 핵심이다.
+
+* Routing: management control plane, software에서 작업
+
+* Forwarding: data plane, hardware에서 작업
+
+  * input port
+
+    * Line termination [물리 계층]: 전송은 물리계층으로하므로 일단 물리계층에서 받고 점차 올려준다.
+    * Link layer protocol [링크 계층]
+    * Lookup: forwarding table을 참고해 output port를 찾는다. [네트워크 계층]
+      * 버퍼에 넣는 이유: lookup 시간보다 더 빨리 datagram이 오는 경우 고려
+
+    <img src="ntw_keywords.assets/image-20220406130803048.png" alt="image-20220406130803048" style="zoom:50%;" />
+
+    * <img src="ntw_keywords.assets/image-20220406130928247.png" alt="image-20220406130928247" style="zoom: 50%;" />
+
+  * Switching fabrics
+
+    * input buffer에서 output buffer로 packet을 이동시킴 
+      * Switching via Memory: 이동시킬 때 바로 버퍼간 이동하는 것이 아니라 메모리를 거쳐서 메모리에 저장한 후에 다시 버퍼로 이동
+        * 단점: 메모리의 bandwidth에 제한, bus(선 이동)을 두 번 거친다.
+      * Switching via a Bus: 공유되어진 bus를 통해 datagram을 전달.
+        * 단점: 버스의 bandwidth에 제한
+        * 장점: 기업이 사용하기에 충분한 속도와 접근성
+      * Switching via interconnection network: overcome bus bandwidth limitations
+        * datagram을 고정길이의 cell로 나누어 사용하면 프로세싱이 유리
+
+  * output ports
+
+    <img src="ntw_keywords.assets/image-20220406132235945.png" alt="image-20220406132235945" style="zoom:50%;" />
+
+    * datagram buffer : [네트워크 계층] : 아래 transmission rate 를 추월할 수 있기 때문에 대기하도록 한다.
+
+      * FirstCome First Served가 아니라 더 복잡한 알고리즘을 통해 내보내는 순서를 정할 수 있다.
+
+        <img src="ntw_keywords.assets/image-20220406132928313.png" alt="image-20220406132928313" style="zoom:33%;" />
+
+        * 버퍼의 크기 계산도 중요한 엔지리어링 기술이다.
+
+    * Link layer protocol : [링크 계층]
+
+    * Line termination: [물리 계층] - 전송하기 전에 물리 계층으로 내려주어야 한다.
+
+​           
+
+### network layer의 Internet protocol
+
+<img src="ntw_keywords.assets/image-20220406133141573.png" alt="image-20220406133141573" style="zoom:50%;" />
+
+* IP protocol : data plane (hardware)
+
+  * IP fragmentation
+
+    * MTU(max.transfer size): largest possible link-level fram
+    * large IP datagram devide within net
+      * 나뉘어서 종착지에서 모두 모인다.
+      * 나누는 것마다 다시 헤더를 붙여주어야 한다.
+
+  * IP address: 32 bit
+
+    * host와 router interface의 identifier
+    * Interface: connection between host/router and physical link
+
+  * Subnets
+
+    <img src="ntw_keywords.assets/image-20220406135246491.png" alt="image-20220406135246491" style="zoom:50%;" />
 
 | 키워드                        | 단원           | 설명                                                         | 관련 키워드                                                  |
 | ----------------------------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -437,11 +801,21 @@
 | rwnd / cwnd                   | 3. Transport   | rwnd: flow control<br />cwnd: congestion control (1 MSS, 1 maximun segment size) | ssthresh                                                     |
 | ssthresh                      | 3. Transport   | cwnd가 속도를 줄이는 default value 값<br />loss가 발생한 cwnd 값의 절반으로 재설정한다. | congestion avoidance                                         |
 | TCP RENO<br />TCP Tahoe       | 3. Transport   | timeout이나 3 duplicate  발생시 cwnd 를 줄이는 방식<br />TCP RENO: 절반으로 줄임<br />TCP Tahoe: 1로 초기화 | ssthresh                                                     |
-| window size                   |                | Loss 가 발생하는 window size                                 |                                                              |
+| window size                   | 3. Transport   | Loss 가 발생하는 window size                                 |                                                              |
+| datagram                      | 4. Newwork     | segment에 header를 붙여 Network 계층으로 이동하는 데이터(?)  |                                                              |
+| Routing                       | 4. Newwork     | Routing algorithm을 통해 end 에서 end까지의 path를 계산      | forwarding                                                   |
+| forwarding                    | 4. Newwork     | forwarding table을 이용해 router에 input으로 들어온 패킷을 적절한 output으로 이동시킨다 | routing                                                      |
+| Virtual circuit               | 4. Newwork     | Connection-oriented,<br />데이터를 보내기 전 call setup과 teardown을 반복합니다.<br />call setup: 패킷 입장에서 다음 라우터에게 VC 넘버를 새로 받아내는 것 | call setup                                                   |
+| IP protocol(인터넷 프로토콜)  | 4. Newwork     | 송신 호스트와 수신 호스트가 패킷 교환 네트워크(패킷 스위칭 네트워크, Packet Switching Network)에서 정보를 주고받는 데 사용하는 정보 위주의 규약(프로토콜, Protocol) | Data plane<br />IP fragmentation, reassembly<br />MTU        |
+| interface                     | 4. Newwork     | connection between host/router and physical link<br />라우터와 호스트 물리적 링크 간 연결관계<br />(host는 보통 1~2개의 interface를 가진다: wired Ethernet, wireless) | IP address                                                   |
+| subnet                        | 4. Newwork     | **적절한 단위로 네트워크를 분할해야할 필요성**이 생기게 된다. 이러한 이유로 인해서 서브넷의 개념이 탄생하게 된다.<br />**서브넷(Subnet)이라는 것은 하나의 네트워크가 분할되어 나눠진 작은 네트워크**이다.<br />IP 주소에서 같은 서브넷 부분으로 이루어진 device interfaces | interface                                                    |
+| CIDR(사이더)                  | 4. Newwork     | Classless InterDomain Routing,<br />클래스 없는 도메인 간 라우팅 기법으로 1993 도입되기 시작한, 최신의 IP 주소 할당 방법이다.<br />사이더는 기존의 IP 주소 할당 방식이었던 네트워크 클래스를 대체하였다.<br />사이더는 IP 주소의 영역을 여러 네트워크 영역으로 나눌 때 기존방식에 비해 유연성을 더해준다. | IP addressing<br />부족해지는 IPv4 주소 효율적 사용<br />접두어를 이용한 주소 지정 방식(광역 라우팅 부담 저하) |
 |                               |                |                                                              |                                                              |
 |                               |                |                                                              |                                                              |
 |                               |                |                                                              |                                                              |
 |                               |                |                                                              |                                                              |
-|                               |                |                                                              |                                                              |
-|                               |                |                                                              |                                                              |
-|                               |                |                                                              |                                                              |
+
+
+
+
+
