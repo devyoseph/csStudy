@@ -81,21 +81,20 @@ $ git commit -m "[BOJ] N-Queen / 골드5 / 1시간" -m "https://www.acmicpc.net/
 
 ​                                      
 
-## ✅ 네트워크 스터디 (2022.03.16 ~ )
+## ✅ 네트워크 스터디 (2022.03.16 ~2022.04.27)
 
-| 내용                        | 상세 내용                                                    | 알고리즘                                                     | 날짜                      | 체크 |
-| --------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------- | ---- |
-| 네트워크 스터디 준비        | `스터디 방식 논의 및 보완`<br />[컴퓨터 네트워크(이화여자대학교 prof.이미정)](http://www.kocw.net/home/enrolment/enrolmentView.do?cid=e44bdd9b3a3f9bb5&lid=f28128416d2fb2cf) |                                                              | 2022년 3월 10일 ~ 12일    | ✅    |
-| 코드 리뷰<br />CS 지식 공유 | `[Chapter 1-1: Roadmap]`<br />`[Chapter 1-2: Roadmap]`       | DFS/BFS<br />[백준 1260](https://www.acmicpc.net/problem/1260)<br />[백준 7576](https://www.acmicpc.net/problem/7576) | 2022년 3월 16일 오후 8:00 | ✅    |
-| 코드 리뷰<br />CS 지식 공유 | `[Chapter 1-3: Roadmap]`<br />`[Chapter 2-1: Application layer]` | 시뮬레이션<br />[백준 14502](https://www.acmicpc.net/problem/14502) | 2022년 3월 19일 오후 8:00 | ✅    |
-| 코드 리뷰<br />CS 지식 공유 | `[Chapter 2-2: Application layer]`<br />`[Chapter 2-3: Application layer]` | 시뮬레이션<br />[백준 14503](https://www.acmicpc.net/problem/14503) | 2022년 3월 23일 오후 8:00 | ✅    |
-| 코드 리뷰<br />CS 지식 공유 | `[Chapter 2-4: Application layer]`<br />`[Chapter 2-5: Application layer]` | 시뮬레이션<br />[백준 14890](https://www.acmicpc.net/problem/14890) | 2022년 3월 26일 오후 8:00 | ✅    |
-| 코드 리뷰<br />CS 지식 공유 | `[Chapter 2: Application layerChapter 3: Transport layer]`<br />`[Chapter 3-1: Transport layer]` | 시뮬레이션<br />[백준 14891](https://www.acmicpc.net/problem/14891)<br />[백준 15685](https://www.acmicpc.net/problem/15685) | 2022년 3월 30일 오후 8:00 |      |
-|                             |                                                              |                                                              |                           |      |
-|                             |                                                              |                                                              |                           |      |
-|                             |                                                              |                                                              |                           |      |
-|                             |                                                              |                                                              |                           |      |
-|                             |                                                              |                                                              |                           |      |
-|                             |                                                              |                                                              |                           |      |
-|                             |                                                              |                                                              |                           |      |
-|                             |                                                              |                                                              |                           |      |
+| 내용                            | 상세 내용                                                    | 알고리즘                                                     | 날짜                      | 체크 |
+| ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------- | ---- |
+| 네트워크 스터디 준비            | `스터디 방식 논의 및 보완`<br />[컴퓨터 네트워크(이화여자대학교 prof.이미정)](http://www.kocw.net/home/enrolment/enrolmentView.do?cid=e44bdd9b3a3f9bb5&lid=f28128416d2fb2cf) |                                                              | 2022년 3월 10일 ~ 12일    | ✅    |
+| 코드 리뷰<br />CS 지식 공유     | `[Chapter 1-1: Roadmap]`<br />`[Chapter 1-2: Roadmap]`       | DFS/BFS<br />[백준 1260](https://www.acmicpc.net/problem/1260)<br />[백준 7576](https://www.acmicpc.net/problem/7576) | 2022년 3월 16일 오후 8:00 | ✅    |
+| 코드 리뷰<br />CS 지식 공유     | `[Chapter 1-3: Roadmap]`<br />`[Chapter 2-1: Application layer]` | 시뮬레이션<br />[백준 14502](https://www.acmicpc.net/problem/14502) | 2022년 3월 19일 오후 8:00 | ✅    |
+| 코드 리뷰<br />CS 지식 공유     | `[Chapter 2-2: Application layer]`<br />`[Chapter 2-3: Application layer]` | 시뮬레이션<br />[백준 14503](https://www.acmicpc.net/problem/14503) | 2022년 3월 23일 오후 8:00 | ✅    |
+| 코드 리뷰<br />CS 지식 공유     | `[Chapter 2-4: Application layer]`<br />`[Chapter 2-5: Application layer]` | 시뮬레이션<br />[백준 14890](https://www.acmicpc.net/problem/14890) | 2022년 3월 26일 오후 8:00 | ✅    |
+| 코드 리뷰<br />CS 지식 공유     | `[Chapter 2: Application layer Chapter 3: Transport layer]`<br />`[Chapter 3-1: Transport layer]` | 시뮬레이션<br />[백준 14891](https://www.acmicpc.net/problem/14891)<br />[백준 15685](https://www.acmicpc.net/problem/15685) | 2022년 3월 30일 오후 8:00 | ✅    |
+| 코드 리뷰<br />CS 지식 공유     | `[Chapter 3-2: Transport layer]`<br />`[Chapter 3-3: Transport layer]` | 시뮬레이션<br />[백준 17144](https://www.acmicpc.net/problem/17144)<br />[백준 17779](https://www.acmicpc.net/problem/17779) | 2022년 4월 2일 오후 8:00  | ✅    |
+| 코드 리뷰<br />CS 지식 공유     | `[Chapter 4-1: Network layer]`<br />`[Chapter 4-2: Network layer]` | 프로그래머스 데브매칭 코딩테스트 리뷰<br />BFS 다중 차원     | 2022년 4월 6일 오후 8:00  | ✅    |
+| 코드 리뷰<br />CS 지식 공유     | `[Chapter 4-3: Network layer]`<br />`[Chapter 4-4: Network layer]` | 시뮬레이션<br />[백준 19236](https://www.acmicpc.net/problem/19236) | 2022년 4월 9일 오후 8:00  | ✅    |
+| 코드 리뷰<br />CS 지식 공유     | `[Chapter 4-5: Network layer]`<br />`[Chapter 4-6: Network layer]` | 유니온 파인드<br />[백준 1717](https://www.acmicpc.net/problem/1717) | 2022년 4월 13일 오후 8:00 | ✅    |
+| **소켓 통신**<br />CS 지식 공유 | `[Chapter 4-7: Network layer]`<br />`[Chapter 5: Link Layer]` | Python으로 소켓 통신 구현(TCP/UDP)<br />                     | 2022년 4월 20일 오후 8:00 |      |
+| CS 지식 공유                    | [ 네트워크 발표회 ]<br />발표형식: PPT, md 파일 등 자율<br />시간: 인 당 1시간 내외 | 네트워크 전체 정리 / 이해                                    | 2022년 4월 23일 오후 8:00 |      |
+| 면접 대비                       |                                                              |                                                              |                           |      |
