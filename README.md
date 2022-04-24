@@ -12,10 +12,11 @@
 
 ## 🔸 기본적인 일정(1학기)
 
-- 시간: 매주 수요일(오후 8시~10시), 토요일(오후 2시~4시)
-- 커리큘럼: CS과목: 운영체제,컴퓨터 네트워크, 컴퓨터 구조 (알고리즘 학습 병행)
+- 시간: 매주 수요일(오후 8시~10시), 토요일(오후 8시~10시)
+- 커리큘럼: CS과목 [ 운영체제,컴퓨터 네트워크 ] , 알고리즘 학습 
   - 운영체제: http://www.kocw.net/home/cview.do?cid=4b9cd4c7178db077
   - 네트워크: http://www.kocw.net/home/enrolment/enrolmentView.do?cid=e44bdd9b3a3f9bb5&lid=f28128416d2fb2cf
+  - 카카오 코딩테스트 문제풀이: https://programmers.co.kr/learn/challenges?tab=all_challenges
 
 ​          
 
@@ -95,6 +96,30 @@ $ git commit -m "[BOJ] N-Queen / 골드5 / 1시간" -m "https://www.acmicpc.net/
 | 코드 리뷰<br />CS 지식 공유     | `[Chapter 4-1: Network layer]`<br />`[Chapter 4-2: Network layer]` | 프로그래머스 데브매칭 코딩테스트 리뷰<br />BFS 다중 차원     | 2022년 4월 6일 오후 8:00  | ✅    |
 | 코드 리뷰<br />CS 지식 공유     | `[Chapter 4-3: Network layer]`<br />`[Chapter 4-4: Network layer]` | 시뮬레이션<br />[백준 19236](https://www.acmicpc.net/problem/19236) | 2022년 4월 9일 오후 8:00  | ✅    |
 | 코드 리뷰<br />CS 지식 공유     | `[Chapter 4-5: Network layer]`<br />`[Chapter 4-6: Network layer]` | 유니온 파인드<br />[백준 1717](https://www.acmicpc.net/problem/1717) | 2022년 4월 13일 오후 8:00 | ✅    |
-| **소켓 통신**<br />CS 지식 공유 | `[Chapter 4-7: Network layer]`<br />`[Chapter 5: Link Layer]` | Python으로 소켓 통신 구현(TCP/UDP)<br />                     | 2022년 4월 20일 오후 8:00 |      |
-| CS 지식 공유                    | [ 네트워크 발표회 ]<br />발표형식: PPT, md 파일 등 자율<br />시간: 인 당 1시간 내외 | 네트워크 전체 정리 / 이해                                    | 2022년 4월 23일 오후 8:00 |      |
+| **소켓 통신**<br />CS 지식 공유 | `[Chapter 4-7: Network layer]`<br />`[Chapter 5: Link Layer]` | Python으로 소켓 통신 구현(TCP/UDP)<br />                     | 2022년 4월 20일 오후 8:00 | ✅    |
+| 알고리즘 풀이                   | 삼성 역량 기출 풀이                                          | [구슬탈출 2](https://www.acmicpc.net/problem/13460)          | 2022년 4월 23일 오후 8:00 | ✅    |
+| 카카오 코테                     | 카카오 코딩테스트 문제 풀이                                  |                                                              |                           |      |
+| CS 지식 공유                    | [ 네트워크 발표회 ]<br />발표형식: PPT, md 파일 등 자율<br />시간: 인 당 1시간 내외 | 네트워크 전체 정리 / 이해                                    | 2022년 5월 14일 오후 8:00 |      |
 | 면접 대비                       |                                                              |                                                              |                           |      |
+
+​                  
+
+​                   
+
+##  🟨 카카오 코딩테스트 기출 풀이 (2022.04.27 ~ )
+
+> **[ 스터디 방식 개편안]**
+>
+> 0. 플랫폼은 [프로그래머스 카카오 기출](https://programmers.co.kr/learn/challenges?tab=all_challenges)을 사용한다. 
+> 1. 스터디 모임의 시작과 동시에 카카오 코딩테스트 1문제를 다 같이 풀이한다.
+> 2. 문제 풀이 후 코드 리뷰를 진행한다.
+> 3. 추가적으로 이전 스터디에서 이전 과제로 정한 알고리즘 2 문제를 리뷰한다.
+> 4. 스터디를 마치기 전 다음 과제로 풀이해올 2 문제를 선정한다.
+> 5. 이와 같은 방식으로 일주일에 두 번 진행해 총 6문제(약 1세트)를 풀이할 수 있다.
+
+| 날짜            | 기출 유형                    | 문제명                                                       | 난이도                   | 풀이여부 |
+| --------------- | ---------------------------- | ------------------------------------------------------------ | ------------------------ | -------- |
+| 2022년 4월 27일 | 2022 KAKAO BLIND RECRUITMENT | k진수에서 소수 개수 구하기<br />양과 늑대<br />주차 요금 계산 | Lv.2<br />Lv.3<br />Lv.2 | ✅        |
+| 2022년 4월 30일 |                              |                                                              |                          | ✅        |
+|                 |                              |                                                              |                          | ✅        |
+|                 |                              |                                                              |                          | ✅        |
