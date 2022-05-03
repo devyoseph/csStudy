@@ -19,7 +19,7 @@
 
 
 
-# 누적합: 4 점을 잡고 각 행 먼저 계산 후 각 열 계산
+# 누적합: 4 점을 잡고 각 행 먼저 계산 후 각 열 계산하기
 def solution(board, skill):
     cnt = 0
     R = len(board)
