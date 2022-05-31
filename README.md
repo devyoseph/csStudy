@@ -125,3 +125,4 @@ $ git commit -m "[BOJ] N-Queen / 골드5 / 1시간" -m "https://www.acmicpc.net/
 | 2022년 5월 11일 | 2021 Dev-Matching: 웹 백엔드 개발자(상반기)                  | 로또의 최고 순위와 최저 순위<br />다단계 칫솔 판매<br />헤비 유저가 소유한 장소 | Lv.1<br />Lv.3<br />Lv.3 | ✅        |
 | 2022년 5월 14일 | 2021 KAKAO BLIND RECRUITMENT                                 | 신규 아이디 추천<br />합승 택시 요금                         | Lv.1<br />Lv.3           | ✅        |
 | 2022년 5월 18일 | 2021 KAKAO BLIND RECRUITMENT                                 | 메뉴 리뉴얼<br />광고 삽입                                   | Lv.2<br />Lv.3           | ✅        |
+| 2022년 5월 19일 | 카카오 페이 코딩 테스트 참여                                 | 16:00 ~ 20:00                                                |                          | ✅        |
