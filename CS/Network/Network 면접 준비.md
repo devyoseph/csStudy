@@ -145,7 +145,7 @@
 >
 > * 만약 한 라우터에 데이터가 몰릴 경우 라우터는 자신의 데이터를 모두 처리할 수 없게 되고 호스트들은 또 다시 재전송하는 것을 반복해 악순환이 계속된다.
 
-![image-20220601130428670](./Network 면접 준비.assets/image-20220601130428670.png)
+<img src="./Network 면접 준비.assets/image-20220601130428670.png" alt="image-20220601130428670"  />
 
 ​               
 
@@ -288,6 +288,8 @@ TCP의 3-way-handshake의 2단계인 Server가 Client에게 SYN패킷과 ACK패�
   * Finished (SSL Handshake 종료)
 
   ![TLS / SSL](./Network 면접 준비.assets/diagram-52@3x.png)
+
+<img src="./Network 면접 준비.assets/diagram-52@3x.png" alt="diagram-52@3x"  />
 
 
 
