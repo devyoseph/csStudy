@@ -557,7 +557,7 @@
 * Finally bit = 1 / seq = x 을 보내면 이에 대해 ACK #를 보내준다.
 * client 쪽에서 보내는 신호이다.
 * 서버는 이것을 받고 ACKbit = 1 와 ACKnum = x+1을 보내준다.
-* 다시 서버는 ACKbit = 1, ACKnum = y+1을 보낸다.
+* 다시 클라이언트는 ACKbit = 1, ACKnum = y+1을 보낸다.
   * 이를 받고 서버측에서 CLOSED 한다.
   * 보낸 client는 바로 close하지 않고 2*max segment lifetime 만큼 기다린다.
     * ACK가 server에 전달되지 않는 경우가 있는데 그러는 경우 server가 닫히지 않기 때문임
