@@ -415,11 +415,7 @@
 
 ​           <img src="ntw_keywords.assets/image-20220401170917360.png" alt="image-20220401170917360" style="zoom:50%;" />
 
-### 2장 요약
-
-<img src="ntw_keywords.assets/image-20220401163221497.png" alt="image-20220401163221497" style="zoom:50%;" />
-
-​               
+### 2장 요약               
 
 ## 3. Transport Layer
 
