@@ -287,7 +287,6 @@ TCP의 3-way-handshake의 2단계인 Server가 Client에게 SYN패킷과 ACK패�
   * Client/ServerHello done (정보 전달 완료)
   * Finished (SSL Handshake 종료)
 
-  ![TLS / SSL](./Network 면접 준비.assets/diagram-52@3x.png)
 
 <img src="./Network 면접 준비.assets/diagram-52@3x.png" alt="diagram-52@3x"  />
 
