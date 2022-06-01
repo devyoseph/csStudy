@@ -8,7 +8,7 @@
 * 클라이언트에서 서버로 SYN 패킷을 보내면, 서버가 SYN + ACK 패킷으로 응답하고, 클라이언트가 ACK 패킷으로 응답함으로써 세션 수립과정이 끝난다.
 * 세션 수립이 끝난 후 클라이언트와 서버는 모두 ESTABLISHED 상태가 된다.
 
-![img](/Users/mhlee/workspace/csStudy/CS/Network/Network 면접 준비/img.png)
+![img](Network 면접 준비_mhlee/img.png)
 
 
 
@@ -20,7 +20,7 @@
 
 * TCP 는 연결형 서비스로 3-way handshaking을 사용하기 때문에 높은 신뢰성을 보장하지만 속도가 비교적 느리다는 단점이 있고, UDP는 비연결형 서비스로 수신 여부를 확인하지 않기 때문에 속도가 비교적 빠르지만 신뢰성이 떨어진다는 단점이 있습니다.
 
-![image-20220601170409295](/Users/mhlee/workspace/csStudy/CS/Network/Network 면접 준비/image-20220601170409295.png)
+![image-20220601170409295](Network 면접 준비_mhlee/image-20220601170409295.png)
 
 ## SYN Flooding (주형)
 
@@ -40,9 +40,9 @@
 * 공개키 : 암호화와 복호화에 사용하는 암호키를 분리한 알고리즘
   * RSA
 
-![img](/Users/mhlee/workspace/csStudy/CS/Network/Network 면접 준비/99EB76495A68F4790C.png)
+![img](Network 면접 준비_mhlee/99EB76495A68F4790C.png)
 
-![공개키알고리즘 Part.1](Network 면접 준비/27120A43587289B82C.jpeg)
+![공개키알고리즘 Part.1](Network 면접 준비_mhlee/27120A43587289B82C.jpeg)
 
 ##  TLS/SSL HandShake (다같이)
 
@@ -61,7 +61,7 @@
   * Client/ServerHello done (정보 전달 완료)
   * Finished (SSL Handshake 종료)
 
-  ![TLS / SSL](Network 면접 준비/diagram-52@3x.png)
+  ![TLS / SSL](Network 면접 준비_mhlee/diagram-52@3x.png)
 
 ## Transport Layer Security (주형)
 
@@ -79,7 +79,7 @@ HTTPS/SSL/TLS 특징 정리
   * 호출된 함수를 호출한 함수가 신경 쓰는지(Synchronous), 호출된 함수가 스스로 신경쓰는지 (Asynchronous) 
   * 비동기는 호출 시 callback 을 전달하여 작업의 완료 여부를 호출한 함수에게 답하게 된다.
 
-![image](Network 면접 준비/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fda50Yz%2Fbtq0Dsje4ZV%2FlGe8H8nZgdBdgFvo7IczS0%2Fimg-20220601190525426.png)
+![img2](Network 면접 준비_mhlee/img2-4094407.png)
 
 ## Blocking I/O & Non-Blocking I/O (주형)
 
