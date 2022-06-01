@@ -2,7 +2,7 @@
 
 ## OSI 7계층 & TCP/IP 5계층 (주형)
 
-![image-20220601174037257](./Network 면접 준비.assets/image-20220601174037257.png)
+<img src="./Network 면접 준비.assets/image-20220601174037257.png" alt="image-20220601174037257"  />
 
 통신이 일어나는 과정을 단계별로 파악하기 위해 네트워크에 통신이 일어나는 과정을 7단계로 나눈 것.
 
@@ -212,9 +212,7 @@ TCP와 달리 신뢰성과 관련된 기능을 제공해 주지 않지만 빠르
 
 TCP 는 연결형 서비스로 3-way handshaking을 사용하기 때문에 높은 신뢰성을 보장하지만 속도가 비교적 느리다는 단점이 있고, UDP는 비연결형 서비스로 수신 여부를 확인하지 않기 때문에 속도가 비교적 빠르지만 신뢰성이 떨어진다는 단점이 있습니다.
 
-![image-20220601170409295](./Network 면접 준비.assets/image-20220601170409295.png)
-
-
+<img src="./Network 면접 준비.assets/image-20220601170409295.png" alt="image-20220601170409295"  />
 
 ## SYN Flooding (주형)
 
@@ -264,9 +262,11 @@ TCP의 3-way-handshake의 2단계인 Server가 Client에게 SYN패킷과 ACK패�
   * A가 B에게 데이터를 보낸다고 할 때, **A는 B의 공개키로 암호화한 데이터**를 보내고 **B는 본인의 개인키로 해당 암호화된 데이터를 복호화**해서 보기 때문에 암호화된 데이터는 B의 공개키에 대응되는 개인키를 갖고 있는 B만이 볼 수 있게 되는 것
   * 대표 알고리즘 : RSA
 
-![img](./Network 면접 준비.assets/99EB76495A68F4790C.png)
+<img src="./Network 면접 준비.assets/99EB76495A68F4790C.png" alt="99EB76495A68F4790C"  />
 
-![공개키알고리즘 Part.1](./Network 면접 준비.assets/27120A43587289B82C.jpeg)
+<img src="./Network 면접 준비.assets/27120A43587289B82C.jpeg" alt="27120A43587289B82C"  />
+
+
 
 
 
@@ -414,9 +414,7 @@ HTTPS: TSL에 HTTP 프로토콜을 얹어서 사용
   * 호출된 함수를 호출한 함수가 신경 쓰는지(Synchronous), 호출된 함수가 스스로 신경쓰는지 (Asynchronous) 
   * 비동기는 호출 시 callback 을 전달하여 작업의 완료 여부를 호출한 함수에게 답하게 된다.
 
-![img2](./Network 면접 준비.assets/img2.png)
-
-
+<img src="./Network 면접 준비.assets/img2.png" alt="img2" />
 
 ## Blocking I/O & Non-Blocking I/O (주형)
 
