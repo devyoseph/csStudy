@@ -126,3 +126,22 @@ $ git commit -m "[BOJ] N-Queen / 골드5 / 1시간" -m "https://www.acmicpc.net/
 | 2022년 5월 14일 | 2021 KAKAO BLIND RECRUITMENT                                 | 신규 아이디 추천<br />합승 택시 요금                         | Lv.1<br />Lv.3           | ✅        |
 | 2022년 5월 18일 | 2021 KAKAO BLIND RECRUITMENT                                 | 메뉴 리뉴얼<br />광고 삽입                                   | Lv.2<br />Lv.3           | ✅        |
 | 2022년 5월 19일 | 카카오 페이 코딩 테스트 참여                                 | 16:00 ~ 20:00                                                |                          | ✅        |
+
+
+
+## JAVA & SPRING 학습 (2022.05.30~)
+
+[진행 상황 (notion)](https://respected-wheel-d7b.notion.site/CS-91b74cf5007f4e6c8fa946deadc159d6)
+
+| 내용           | 상세 내용                                                    | **날짜**                  | 체크 |
+| -------------- | ------------------------------------------------------------ | ------------------------- | ---- |
+| Java 강의 듣기 | Java 기초 문법                                               | 2022년 5월 30일 ~ 6월 2일 | ✅    |
+| Java 강의 듣기 | 다형성, 제네릭 컬렉션 파일 입출력                            | 2022년 6월 3일            | ✅    |
+| Java 강의 듣기 | Java 예외 처리, MySQL                                        | 2022년 6월 5일            | ✅    |
+| Java 강의 듣기 | Spring Architecture DI, AOP/WebMVC                           | 2022년 6월 7일            | ✅    |
+| Java 강의 듣기 | MyBatis                                                      | 2022년 6월 8일            | ✅    |
+| Java 강의 듣기 | Swagger, Spring boot                                         | 2022년 6월 10일           | ✅    |
+| 프로젝트 기획  | 프로젝트 컨셉 결정,<br />목업 페이지, <br />기본 요구 사항 정리 | 2022년 6월 11일           | ✅    |
+| 프로젝트 기획  | Spring, Spring boot 정리 내용 공유,<br />Git 규칙 정하기<br />상세 기능 정리<br />역할 나누기 | 2022년 6월 12일           | ✅    |
+| Java 강의 듣기 | [인프런 강의로 복습하기](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard) | 2022년 6월 22일           |      |
+
