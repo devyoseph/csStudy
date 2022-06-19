@@ -127,7 +127,7 @@ $ git commit -m "[BOJ] N-Queen / 골드5 / 1시간" -m "https://www.acmicpc.net/
 | 2022년 5월 18일 | 2021 KAKAO BLIND RECRUITMENT                                 | 메뉴 리뉴얼<br />광고 삽입                                   | Lv.2<br />Lv.3           | ✅        |
 | 2022년 5월 19일 | 카카오 페이 코딩 테스트 참여                                 | 16:00 ~ 20:00                                                |                          | ✅        |
 
-
+​                       
 
 ## JAVA & SPRING 학습 (2022.05.30~)
 
