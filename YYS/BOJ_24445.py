@@ -1,8 +1,3 @@
-from collections import deque
-import sys
-sys.setrecursionlimit(100000)
-input = sys.stdin.readline
-
 def bfs(arr, visit, res, R):
     number = 1
 
@@ -22,7 +17,7 @@ def bfs(arr, visit, res, R):
                 
 
 N, M, R = map(int, input().split())
-# arr = [[0 for _ in range(N)] for __ in range(N)]
+
 arr = [list() for _ in range(N)]
 res = [0]*N # 결과 저장
 visit = [False]*N
