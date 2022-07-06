@@ -5,7 +5,6 @@ def solution(play_time, adv_time, logs):
     H = int(play_time[0:2])
 
     TIME = H*60*60 + M*60 + S
-
     video_data = [0 for _ in range(TIME+1)]
     video_data_sum = [0 for _ in range(TIME + 1)]
 
